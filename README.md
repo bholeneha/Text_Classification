@@ -1,4 +1,4 @@
-# Text_Classification
-1.
-2.
-3.
+### Communication protocal:
+- Slack group
+
+- Zoom 
