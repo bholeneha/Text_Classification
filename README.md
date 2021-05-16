@@ -1,13 +1,15 @@
-# Text_Classification-
+# Text_Classification
 
-### Problem to Solve
+## Problem to Solve
 Perform text classification on email data and categorize data into four categaries; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
 
 ## Rationale for Topic 
 Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of doccuments on the basis of privacy and confideniality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
 
-### Team Members
+## Team Members
 Fatima Hussain- Model development and technology selection
+Neha - Database
+Bev - Dashboard 
 
 ## Machine Learning Model 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
@@ -17,7 +19,6 @@ We can use the following classification algorithm, alogwith LDA:
 * KNN
 * Logitic Regression
 
-
 ### Data Preprocessing
 Prior to text classification,  LDA  pre-process the raw text/doccument.
 
@@ -26,6 +27,9 @@ Prior to text classification,  LDA  pre-process the raw text/doccument.
 * Stopwordremoval: Remove words that do not add any logical meaning 
 * Lemmatization:  Words in third person are changed to first person and verbs in past and future tenses are changed into present.
 * Tokenization: Break text into ‘tokens’, i.e. words and phrases . Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
+
+## Database
+Since the dataset used in this project is unstructured therefore Amazon S3 is more appropriate than a conventional SQL database. 
 
 ## Dashboard
 Technology 
