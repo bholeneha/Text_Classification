@@ -8,8 +8,10 @@ Text classification has wide variety of applications in various domains. It can 
 
 ## Team Members
 Fatima Hussain- Model development and technology selection
-Neha - Database
+Neha - Data Cleaning
 Bev - Dashboard 
+Veronika - Database
+Sibtain - GitHub
 
 ### Communication protocal:
 - Slack group
@@ -32,6 +34,13 @@ Prior to text classification,  LDA  pre-process the raw text/doccument.
 * Stopwordremoval: Remove words that do not add any logical meaning 
 * Lemmatization:  Words in third person are changed to first person and verbs in past and future tenses are changed into present.
 * Tokenization: Break text into ‘tokens’, i.e. words and phrases . Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
+
+### Datasets 
+
+* [NIPS Papers Dataset](https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/data/NIPS%20Papers.zip)
+* [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
+
+We intend to use one or both of these datasets. 
 
 ## Database
 Since the dataset used in this project is unstructured therefore Amazon S3 is more appropriate than a conventional SQL database. 
