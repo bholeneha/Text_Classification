@@ -13,7 +13,7 @@ Text classification has wide variety of applications in various domains. It can 
 * Veronika - Database
 * Sibtain - GitHub
 
-### Communication protocal:
+### Communication protocol:
 - Slack group
 - Zoom 
 - Meetings 4 times per week 
