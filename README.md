@@ -54,4 +54,3 @@ Technology
 - consider the use of Tableau 
 Layout
 - consideration to be given on how to be included in final presentation
-
