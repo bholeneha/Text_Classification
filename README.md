@@ -13,6 +13,11 @@ Fatima Hussain- Model development and technology selection
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
 It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifyimg the topics.
 
+We can use the following classification algorithm, alogwith LDA:
+* KNN
+* Logitic Regression
+
+
 ### Data Preprocessing
 Prior to text classification,  LDA  pre-process the raw text/doccument.
 
