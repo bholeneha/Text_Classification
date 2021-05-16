@@ -7,11 +7,11 @@ Perform text classification on email data and categorize data into four categari
 Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of doccuments on the basis of privacy and confideniality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
 
 ## Team Members
-Fatima Hussain- Model development and technology selection
-Neha - Data Cleaning
-Bev - Dashboard 
-Veronika - Database
-Sibtain - GitHub
+* Fatima Hussain- Model development and technology selection
+* Neha - Data Cleaning
+* Bev - Dashboard 
+* Veronika - Database
+* Sibtain - GitHub
 
 ### Communication protocal:
 - Slack group
