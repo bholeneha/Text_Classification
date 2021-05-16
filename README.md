@@ -11,6 +11,11 @@ Fatima Hussain- Model development and technology selection
 Neha - Database
 Bev - Dashboard 
 
+### Communication protocal:
+- Slack group
+- Zoom 
+- Meetings 4 times per week 
+
 ## Machine Learning Model 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
 It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifyimg the topics.
@@ -40,3 +45,4 @@ Technology
 - consider the use of Tableau 
 Layout
 - consideration to be given on how to be included in final presentation
+
