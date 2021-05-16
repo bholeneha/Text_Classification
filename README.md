@@ -8,9 +8,9 @@ Text classification has wide variety of applications in various domains. It can 
 
 ## Team Members
 Fatima Hussain- Model development and technology selection
-Neha - Database
+Neha - Data Cleaning
 Bev - Dashboard 
-Veronika - Data Cleaning
+Veronika - Database
 Sibtain - GitHub
 
 ## Machine Learning Model 
@@ -32,8 +32,8 @@ Prior to text classification,  LDA  pre-process the raw text/doccument.
 
 ### Datasets 
 
-- [NIPS Papers Dataset](https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/data/NIPS%20Papers.zip)
-- [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
+* [NIPS Papers Dataset](https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/data/NIPS%20Papers.zip)
+* [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
 
 We intend to use one or both of these datasets. 
 
