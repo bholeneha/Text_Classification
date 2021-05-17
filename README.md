@@ -13,6 +13,11 @@ Text classification has wide variety of applications in various domains. It can 
 * Veronika - Database
 * Sibtain - GitHub
 
+### Communication protocol:
+- Slack group
+- Zoom 
+- Meetings 4 times per week 
+
 ## Machine Learning Model 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
 It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifyimg the topics.
