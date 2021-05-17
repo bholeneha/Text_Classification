@@ -22,7 +22,7 @@ Text classification has wide variety of applications in various domains. It can 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
 It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifyimg the topics.
 
-We can use the following classification algorithm, alogwith LDA:
+We can use the following classification algorithm, alongwith LDA:
 * KNN
 * Logitic Regression
 
