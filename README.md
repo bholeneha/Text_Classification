@@ -46,3 +46,5 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 * We used : lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word,num_topics=num_topics) to build the model and tried with different number of topics. 
 * We see distinct clusters when we choose "No. Topics=4".  If "No. Topics" are increases, intersecting clusters are formed, clearly showing that data set has distinct four categories of text.
 * We used pyLDAvis.gensim to see the visuals.
+
+
