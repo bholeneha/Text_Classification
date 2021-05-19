@@ -30,10 +30,19 @@ Prior to text classification,  LDA  pre-process the raw text/doccument.
 # Segment#2
 ## Machine Learning Model 
 We performed data cleaning before applying LDA model, and performed following steps:
-
+### Data Preprocessing
 *  Raw data was available in txt files and we created  data frame for all the data and stored in the google COLAB.
 *  Stop words are removed and data is lemanized and tokanized. imported "stopwords" from nltk.corpus ,  "WordPunctTokenizer" from nltk.tokanize, "punctuation" from string, and WordNetLemmatizer from nltk.stem 
 * Cleaned data is stored in the same dataframe with column name "Filtered Text"
-* 
 
+### Bag of Words
+Before applying the LDA model, we developed the "Bag of Words" from the "Filtered Text" column:
 
+* Entire sentence is split on spaces and words are seperated.
+* Dictonary of words is created by  importing  "gensim" and "simple_preprocess" from gensim.utils
+* Each word will be shown by no. of times, it appears in the dictionary
+
+### LDA Model Details: 
+* We used : lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word,num_topics=num_topics) to build the model and tried with different number of topics. 
+* We see distinct clusters when we choose "No. Topics=4".  If "No. Topics" are increases, intersecting clusters are formed, clearly showing that data set has distinct four categories of text.
+* We used pyLDAvis.gensim to see the visuals.
