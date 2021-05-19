@@ -15,29 +15,66 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous" 
       />
-<link rel="stylesheet" href="static/css/stylesheet.css"
-
+<link rel="stylesheet" href="./static/css/style.css"
+<div class=background-color>
 <body class="bg-dark">
     <div class="wrapper">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <a class="navbar-brand" href="index.html">Clear Submission</a>
-        </nav>
+       
         <div class="jumbotron">
             <h1 data-ng-class="display-4">Data Classification</h1>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <h3>What the model does......</h3>
+            <div class="container-fluid">
+                <h3>Model 1</h3>
+                    <p>specific details regarding the model</p>
+                        <a class="nav-link" href="model_1.html">Model 1</a>
+            
+                <h3>Model 2</h3>
+                    <p>specific details regarding the model</p>
+                        <a class="nav-link" href="model_2.html">Model 2</a>
             </div>
         </div>
+       
+        <div class="container">
+            <form action=..>
+                <div class="form-group">
+                    <label for="Input"><h4>Input text for classification</h4></label>
+                    <textarea class="form-control" rows="5" id="submit" name="text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>  
+                <button type="reset" class="btn btn-primary">Clear</button>
+            </form>
+        </div>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tbody>
+                    <tr>
+                        <th>Model</th>
+                        <th>Class</th>
+                        <th>Probability</th>
+                    </tr>
+                    <tr>
+                        <td>Model 1</td>
+                        <td>{{ predictions.class1 }}</td>
+                        <td>{{ predictions.prob1 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Model 2</td>
+                        <td>{{ predictions.class2 }}</td>
+                        <td>{{ predictions.prob2</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+        
     </div>
-    
 
-
-
-
-
-
+        
+                         
+        </div>           
+           
+    </div>   
+  </body>  
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
