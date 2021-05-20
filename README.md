@@ -42,6 +42,10 @@ Prior to text classification,  LDA  pre-process the raw text/doccument.
 
 We intend to use one or both of these datasets. 
 
+![four](Images/four.png)
+![five](Images/five.png)
+![eight](Images/eight.png)
+
 ## Database
 Since the dataset used in this project is unstructured therefore Amazon S3 is more appropriate than a conventional SQL database. 
 
