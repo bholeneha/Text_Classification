@@ -56,15 +56,15 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 * We see distinct clusters when we choose "No. Topics=4".  If "No. Topics" are increases, intersecting clusters are formed, clearly showing that data set has distinct four categories of text.
 * We used pyLDAvis.gensim to see the visuals.
 
+![Four distinct topic](Images/four.png)
+![Overlapping Clusters](Images/eight.png)
+
 ### Datasets 
 
 * [NIPS Papers Dataset](https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/data/NIPS%20Papers.zip)
 * [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
 
 We intend to use one or both of these datasets. 
-
-![Four distinct topic](Images/four.png)
-![Overlapping Clusters](Images/eight.png)
 
 ## Database
 Since the dataset used in this project is unstructured therefore Amazon S3 is more appropriate than a conventional SQL database. 
