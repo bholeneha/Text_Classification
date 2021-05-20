@@ -63,6 +63,9 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 
 We intend to use one or both of these datasets. 
 
+![Four distinct topic](Images/four.png)
+![Overlapping Clusters](Images/eight.png)
+
 ## Database
 Since the dataset used in this project is unstructured therefore Amazon S3 is more appropriate than a conventional SQL database. 
 
@@ -74,4 +77,4 @@ Technology
 - JS (ES11) 
 - consider the use of Tableau 
 Layout
-- consideration to be given on how to be included in final presentation
+- consideration to be given on how to be included in final presentation....
