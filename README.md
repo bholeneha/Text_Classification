@@ -1,10 +1,10 @@
-# Text_Classification
+# Text Classification
 
 ## Problem to Solve
 Perform text classification on email data and categorize data into four categaries; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
 
 ## Rationale for Topic 
-Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of doccuments on the basis of privacy and confideniality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
+Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of documents on the basis of privacy and confidentiality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
 
 ## Team Members
 * Fatima Hussain- Model development and technology selection
@@ -20,20 +20,20 @@ Text classification has wide variety of applications in various domains. It can 
 
 ## Machine Learning Model 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
-It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifyimg the topics.
+It is an exploratory process and LDA identifies the hidden topic structures in text documents.  It uses Bayesian statistics and Dirichlet distributions for processing and identifying the topics.
 
-We may consider using the following classification algorithm, alogwith LDA:
+We may consider using the following classification algorithm, along with LDA:
 * KNN
-* Logitic Regression
+* Logistic Regression
 
 ### Data Preprocessing
-Prior to text classification,  LDA pre-process the raw text/doccument.
+Prior to text classification,  LDA pre-process the raw text/document.
 
 * Normalization: Transform text to normal/canonical form
 * Stemming: Reduce a word to its word stem/root without suffixes and prefixes 
 * Stopwordremoval: Remove words that do not add any logical meaning 
 * Lemmatization:  Words in third person are changed to first person and verbs in past and future tenses are changed into present.
-* Tokenization: Break text into ‘tokens’, i.e. words and phrases . Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
+* Tokenization: Break text into ‘tokens’, i.e. words and phrases. Split the text into sentences and the sentences into words. Lowercase the words and remove punctuation.
 
 # Segment 2
 
@@ -47,12 +47,12 @@ We performed data cleaning before applying LDA model, and performed following st
 ### Bag of Words
 Before applying the LDA model, we developed the "Bag of Words" from the "Filtered Text" column:
 
-* Entire sentence is split on spaces and words are seperated.
-* Dictonary of words is created by  importing  "gensim" and "simple_preprocess" from gensim.utils
+* Entire sentence is split on spaces and words are separated.
+* Dictionary of words is created by  importing  "gensim" and "simple_preprocess" from gensim.utils
 * Each word will be shown by no. of times, it appears in the dictionary
 
 ### LDA Model Details: 
-* We used : lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word,num_topics=num_topics) to build the model and tried with different number of topics. 
+* We used: lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word,num_topics=num_topics) to build the model and tried with different number of topics. 
 * We see distinct clusters when we choose "No. Topics=4".  If "No. Topics" are increases, intersecting clusters are formed, clearly showing that data set has distinct four categories of text.
 * We used pyLDAvis.gensim to see the visuals.
 
