@@ -1,15 +1,14 @@
 
+var reset = document.getElementById("reset");
+
 var alertDiv = document.getElementById("alert-row");
 var textArea = document.getElementById("user-input");
 
 
-
 function submitUserInformation() {
-    var userText = textArea.value.replace(/\s+/g, ' ').split(' ').filter((e) => e.length > 0);;
+    var userText = textArea.value.replace(/[^A-Za-z]+/g, ' ');
     console.log(userText);
-    console.log("check")
-
-    fetch('http://index/submit', {
+    fetch('/api/submit', {
         method: 'POST',
         body:JSON.stringify({
             userInput: userText
@@ -21,17 +20,18 @@ function submitUserInformation() {
         return response.text();
     }).then(data => {
         console.log(data)
-        alertDiv.classList = "alert-row alert-success";
-        alertDiv.innerHTML = '<h3>Sent Successfully</h3><br><p>${data}</p>'
+        alertDiv.classList = "row-alert alert-success";
+        alertDiv.innerHTML = `<h3 class="text-dark">Sent Successfully</h3><br><p class="text-dark">${data}</p>`
     }).catch ( err => {
-        alertDiv.innerHTML = "Error: ${err}"
+        alertDiv.innerHTML = `Error: ${err}` 
     });
 }
 
-
-
-
+function clearText() {
+    console.log("checking")
+    textArea.value = ""
+    alertDiv.innerHTML = ""
+}
 var submitBtn = document.getElementById("submit-this");
-submitBtn.addEventListener("click", submitUserInformation);
-
-
+submitBtn.addEventListener("click", submitUserInformation)
+reset.addEventListener("click", clearText)
