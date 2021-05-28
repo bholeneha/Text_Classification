@@ -16,17 +16,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import regex
-#from wordcloud import WordCloud
 from nltk.corpus import stopwords 
 from nltk.tokenize import WordPunctTokenizer
 from string import punctuation
 from nltk.stem import WordNetLemmatizer
 import nltk
+from wordcloud import WordCloud
+
 #nltk.download('stopwords')
 #nltk.download('wordnet')
 #nltk.download('punkt')
 #nltk.download('averaged_perceptron_tagger')
 
+os.chdir('/Users/16472/Bootcamp/local_version')
+filename = 'test1_model.pkl'
+load_model = pickle.load(open(filename, 'rb'))
 
 
 wordnet_lemmatizer = WordNetLemmatizer()
@@ -42,11 +46,6 @@ def filter_text(text, stop_words):
     filtered_text = [wordnet_lemmatizer.lemmatize(w, pos="v") for w in filtered_text if not w in stop_words] 
     return " ".join(filtered_text)
 
-
-
-#os.chdir('/Users/16472/Bootcamp/local_version')
-#filename = 'test1_model.pkl'
-#load_model = pickle.load(open(filename, 'rb'))
 
 # initialize the flask app
 app = Flask(__name__)
@@ -66,7 +65,11 @@ def predict():
     id2word = corpora.Dictionary(word_list)
     texts = word_list
     corpus = [id2word.doc2bow(text) for text in texts]
-    return jsonify(corpus)
+    classification = load_model(corpus)
+ 
+
+
+    return jsonify(classification)
 
 
 
