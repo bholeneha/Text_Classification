@@ -1,13 +1,8 @@
 # TEXT CLASSIFICATION USING LDA 
-<hr>
-
-<br>
-<br>
+ 
 
 ## Table of Contents
-<hr>
-
-
+ 
 - [Overview](##ProjectOverview)
 - [Team](##Team)
 - [Dataset](##Dataset)
@@ -19,11 +14,9 @@
     - [Machine Learning](###MachineLearning)
 - [Analysis](##Analysis)
 - [Dashboard](##Dashboard)
-<br>
-<br>
+
 
 ## PROJECT OVERVIEW 
-<hr>
 
 ### Why we chose this topic? 
 Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of documents on the basis of privacy and confidentiality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
@@ -33,13 +26,10 @@ Text classification has wide variety of applications in various domains. It can 
 
 ### Purpose 
 Perform text classification on email data and categorize data into four categaries; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
-<br>
-<br>
 
 
 ## TEAM
-<hr>
-
+ 
 - Fatima Hussain- Model development and technology selection
 - Neha Bhole - Data Cleaning
 - Beverly Edwards-Smith - Dashboard 
@@ -49,12 +39,10 @@ Perform text classification on email data and categorize data into four categari
 ### Communication protocol:
 - Communication over slack group channel
 - Zoom Meetings 4 times per week 
-
-<br>
-<br>
+  
 
 ## DATASET
-<hr>
+ 
 The following dataset was used in this project. It is a mock journalist emails dataset available on Kaggle. It contains four folders corresponding to four topics - Crime, Politics, Science and Entertainment. Each folder contains 1000+ text files with individual emails.  
 
 [comment]: # ( [NIPS Papers Dataset]https://github.com/kapadias/mediumpo )
@@ -63,19 +51,13 @@ The following dataset was used in this project. It is a mock journalist emails d
 
 [comment]: # (We intend to use one or both of these datasets. )
 
-<br>
-<br>
 
 ## DATABASE 
-<hr>
-
+ 
 The dataset used in this project is unstructured, therefore Amazon S3 was used as its more appropriate than a conventional SQL database. (NEW -> However, since dataset was difficult to import for analysis in google colab, it was restructured and then uploaded to Amazon S3.)
 
-<br>
-<br>
-
 ## TECHNOLOGIES USED
-<hr>
+ 
 
 Softwares:
 - Python
@@ -90,11 +72,9 @@ Libraries:
 - Machine Learning - 
 - Visualization - WordCloud, pyLDAvis
 
-<br>
-<br>
 
 ## METHOD
-<hr>
+ 
 
 ### Machine Learning Model 
 We intend to perform text classification and use Latent Dirichlet Allocation algorithm.
@@ -144,20 +124,16 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 
 ![Overlapping Clusters](Images/eight.png)
 
-<br>
-<br>
 
 ## ANALYSIS 
-<hr>
+ 
 
 ### SUMMARY 
 (What more can you do with this model)
-
-<br>
-<br>
+  
 
 ## DASHBOARD
-<hr>
+ 
 
 The dashboard for this project can be accessed here: [Text Classification Dashboard](<link goes here>)
 
