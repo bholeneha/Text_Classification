@@ -22,16 +22,18 @@ from string import punctuation
 from nltk.stem import WordNetLemmatizer
 import nltk
 from wordcloud import WordCloud
+import gensim
+import json
 
 #nltk.download('stopwords')
 #nltk.download('wordnet')
 #nltk.download('punkt')
 #nltk.download('averaged_perceptron_tagger')
 
-os.chdir('/Users/16472/Bootcamp/local_version')
-filename = 'test1_model.pkl'
-load_model = pickle.load(open(filename, 'rb'))
-
+os.chdir('/Users/16472/Bootcamp/text_classification-')
+#filename = 'test1_model.pkl'
+#load_model = pickle.load(open(filename, 'rb'))
+new_lda = gensim.models.LdaModel.load('model/lda.model')
 
 wordnet_lemmatizer = WordNetLemmatizer()
 
@@ -65,11 +67,18 @@ def predict():
     id2word = corpora.Dictionary(word_list)
     texts = word_list
     corpus = [id2word.doc2bow(text) for text in texts]
-    classification = load_model(corpus)
- 
-
-
-    return jsonify(classification)
+    unseen_doc = corpus
+    classification = list(new_lda.get_document_topics(unseen_doc))
+    #for report in classification:
+     #   if report[0][0] == 0:
+      #     return jasonify("economics with an accuracy of", classification [0][0][1])
+      #  if report[0][0] == 1:
+       #     return jasonify("one with an accuracy of", classification [0][0][1])
+       # if report[0][0] == 2:
+        #    return jasonify("two with an accuracy of", classification [0][0][1])
+        #if report[0][0] == 3:
+         #   return jasonify("three with an accuracy of", classification [0][0][1])
+    return jsonify ("unseen_doc")
 
 
 

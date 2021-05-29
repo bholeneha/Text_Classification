@@ -35,3 +35,10 @@ function clearText() {
 var submitBtn = document.getElementById("submit-this");
 submitBtn.addEventListener("click", submitUserInformation)
 reset.addEventListener("click", clearText)
+
+function autoResizeDiv()
+        {
+            document.getElementById('main').style.height = window.innerHeight +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
