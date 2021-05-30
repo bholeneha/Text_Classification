@@ -52,14 +52,17 @@ def filter_text(text, stop_words):
 app = Flask(__name__)
 
 # define app routes
+# routes to index on start of flask
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# route used when user clicks link to classify using Naive Bayes model
 @app.route('/prediction_page')
 def prediction_page():
     return render_template('model_1.html')
 
+# route used when home button is clicked on Naive Bayes model
 @app.route('/home_page')
 def home_page():
     return render_template('index.html')
