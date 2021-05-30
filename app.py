@@ -24,7 +24,11 @@ import nltk
 from wordcloud import WordCloud
 import gensim
 import json
-
+from gensim.utils import simple_preprocess
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
 #nltk.download('stopwords')
 #nltk.download('wordnet')
 #nltk.download('punkt')
@@ -34,6 +38,12 @@ os.chdir('/Users/16472/Bootcamp/text_classification-')
 #filename = 'test1_model.pkl'
 #load_model = pickle.load(open(filename, 'rb'))
 new_lda = gensim.models.LdaModel.load('model/lda.model')
+
+#CLF_model = joblib.load('model/clf_model.model')
+#clf_vect = joblib.load('model/clf_vect.model')
+#count_vect = joblib.load('model/clf_count.model')
+#tfidf_transformer = joblib.load('model/clf_transformer.model')
+count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
 
 wordnet_lemmatizer = WordNetLemmatizer()
 
@@ -57,18 +67,18 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/api/submit',methods=["POST"])
-def predict():
-    content = request.json['userInput']
-    filteredContent = filter_text(content, stop)
-    word_list = []
-    temp = filteredContent.split(" ")
-    word_list.append(temp)
-    id2word = corpora.Dictionary(word_list)
-    texts = word_list
-    corpus = [id2word.doc2bow(text) for text in texts]
-    unseen_doc = corpus
-    classification = list(new_lda.get_document_topics(unseen_doc))
+#@app.route('/api/submit',methods=["POST"])
+#def predict():
+ #   content = request.json['userInput']
+  #  filteredContent = filter_text(content, stop)
+   # word_list = []
+    #temp = filteredContent.split(" ")
+   # word_list.append(temp)
+    #id2word = corpora.Dictionary(word_list)
+    #texts = word_list
+    #corpus = [id2word.doc2bow(text) for text in texts]
+    #unseen_doc = corpus
+    #classification = list(new_lda.get_document_topics(unseen_doc))
     #for report in classification:
      #   if report[0][0] == 0:
       #     return jasonify("economics with an accuracy of", classification [0][0][1])
@@ -78,8 +88,19 @@ def predict():
         #    return jasonify("two with an accuracy of", classification [0][0][1])
         #if report[0][0] == 3:
          #   return jasonify("three with an accuracy of", classification [0][0][1])
-    return jsonify ("unseen_doc")
+    #return jsonify ("unseen_doc")
 
+#count_vect = CountVectorizer()
+
+@app.route('/api/submit', methods=["POST"])
+def predict():
+    predict = request.json['userInput']
+   # prediction = count_vect.fit([predic])
+    prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
+
+    return json.dumps(prediction.tolist())
+
+   # return jsonify (np.ravel(prediction))
 
 
 if __name__ == '__main__':

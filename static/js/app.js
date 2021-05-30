@@ -19,9 +19,10 @@ function submitUserInformation() {
     }).then(response => {
         return response.text();
     }).then(data => {
-        console.log(data)
+        console.log(typeof data)
+        var classification = data.replace(/[^A-Za-z]+/g, ' ');
         alertDiv.classList = "row-alert alert-success";
-        alertDiv.innerHTML = `<h3 class="text-dark">Sent Successfully</h3><br><p class="text-dark">${data}</p>`
+        alertDiv.innerHTML = `<h3 class="text-dark">Sent Successfully</h3><br><p class="text-dark">${classification}</p>`
     }).catch ( err => {
         alertDiv.innerHTML = `Error: ${err}` 
     });
@@ -36,9 +37,3 @@ var submitBtn = document.getElementById("submit-this");
 submitBtn.addEventListener("click", submitUserInformation)
 reset.addEventListener("click", clearText)
 
-function autoResizeDiv()
-        {
-            document.getElementById('main').style.height = window.innerHeight +'px';
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
