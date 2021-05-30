@@ -150,7 +150,7 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 
 
 ### SUMMARY 
-(What more can you do with this model)
+(What more can you do with this model) 
   
 
 
