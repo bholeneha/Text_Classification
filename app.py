@@ -56,13 +56,21 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/prediction_page')
+def prediction_page():
+    return render_template('model_1.html')
+
+@app.route('/home_page')
+def home_page():
+    return render_template('index.html')
+
 # prediction for NB model
 @app.route('/api/submit', methods=["POST"])
 def predict():
     predict = request.json['userInput']
     prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
     return json.dumps(prediction.tolist())
-
+    
 
 #@app.route('/api/submit',methods=["POST"])
 #def predict():
