@@ -22,7 +22,7 @@ function submitUserInformation() {
         console.log(typeof data)
         var classification = data.replace(/[^A-Za-z]+/g, ' ');
         alertDiv.classList = "row-alert alert-success";
-        alertDiv.innerHTML = `<h3 class="text-dark">Sent Successfully</h3><br><p class="text-dark">${classification}</p>`
+        alertDiv.innerHTML = `<p class="text-dark">${classification}</p>`
     }).catch ( err => {
         alertDiv.innerHTML = `Error: ${err}` 
     });

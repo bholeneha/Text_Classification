@@ -29,12 +29,14 @@
                 <h1 data-ng-class="display-4">Data Classification</h1>
             </div>
             <div class="container-fluid">
-                <a class="nav-link" href="model_1.html">Latent Dirichlet Allocation ("LDA")</a>
-                    <p>LDA identifies the hidden topic structures in text documents.  Using Bayesian statistics and Dirichletdistributions to process and identify topics.
-                        In order to use LDA data must first be pre-processed through normalization, stemming, stop word removal and tokenization.
-                    The model lda_model = gensim.models.LdaMulticore(corpus, id2word=id2word,num_topics) was used to build the model
-                    </p>
-            
+                <a class="nav-link" href="model_1.html">Naive Bayes Classifier</a> ("LDA")</a>
+                    <p>Naive Bayes Classifier is a probabilistic classifier, meaning it predicts on the basis of the probability of an object.  The name Naive is due to it assuming that the occurrence of 
+                        a certain feature is independent of the occurrence of other features.  Bayes comes is due to it depending on the principle of Bayes'Theorem.  Bayes theorem also referred to as Bayes' Rule 
+                        Bayes'law, is used to determine the probability of a hypothesis with prior knowledge.</p>
+                    <p>Naive Bayes classifier converts the given dataset into frequency tables.  It then generates the likelihood table by finding the probabilities of given features. Finally, it
+                        uses the Bayes theorem to calculate the posterior probability.</p>
+                    <p>Advantages of the Naive Bayes classifier are that it is fast and easy to predict a class of datasets and it can be used for Binary as well as Multi-class Classifications making it the most
+                        popular choice for text classification problems. A disadvantage of the Naive Bayes classifier is that it assumes that all features are independent or unrelated, so it cannot learn the relationship between features</p>
             </div>
         </div>
        
@@ -44,10 +46,13 @@
                     <label for="user-input">Input text for classification</label>
                     <textarea class="form-control" rows="5" id="user-input" name="text"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for=response">Classification</label>
+                </div>
                 <div class="row" id="alert-row">
                 </div> 
                 <div class="row">
-                    <button id="submit-this" class="btn btn-primary">Predict</button>  
+                    <button id="submit-this" class="btn btn-primary mr-3">Predict</button>  
                     <button id="reset" class="btn btn-primary">Clear</button>
                 </div>
         </div>

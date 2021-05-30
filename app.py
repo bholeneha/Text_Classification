@@ -1,11 +1,9 @@
-#import libraries
+# load dependencies
 import os
 import numpy as np
-import pickle
 from flask import Flask, request, json, jsonify, request
 from flask.templating import render_template
 import nltk
-#nltk.download('stopwords')
 from nltk.corpus import stopwords
 import gensim.corpora as corpora
 from string import punctuation
@@ -29,26 +27,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-#nltk.download('stopwords')
-#nltk.download('wordnet')
-#nltk.download('punkt')
-#nltk.download('averaged_perceptron_tagger')
 
+# load models
 os.chdir('/Users/16472/Bootcamp/text_classification-')
-#filename = 'test1_model.pkl'
-#load_model = pickle.load(open(filename, 'rb'))
 new_lda = gensim.models.LdaModel.load('model/lda.model')
-
-#CLF_model = joblib.load('model/clf_model.model')
-#clf_vect = joblib.load('model/clf_vect.model')
-#count_vect = joblib.load('model/clf_count.model')
-#tfidf_transformer = joblib.load('model/clf_transformer.model')
 count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
 
+# define variables for LDA model
 wordnet_lemmatizer = WordNetLemmatizer()
-
 stop = stopwords.words('english')
 
+# required for LDA model
 for punct in punctuation:
     stop.append(punct)
 
@@ -62,10 +51,18 @@ def filter_text(text, stop_words):
 # initialize the flask app
 app = Flask(__name__)
 
-
+# define app routes
 @app.route('/')
 def home():
     return render_template('index.html')
+
+# prediction for NB model
+@app.route('/api/submit', methods=["POST"])
+def predict():
+    predict = request.json['userInput']
+    prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
+    return json.dumps(prediction.tolist())
+
 
 #@app.route('/api/submit',methods=["POST"])
 #def predict():
@@ -89,19 +86,6 @@ def home():
         #if report[0][0] == 3:
          #   return jasonify("three with an accuracy of", classification [0][0][1])
     #return jsonify ("unseen_doc")
-
-#count_vect = CountVectorizer()
-
-@app.route('/api/submit', methods=["POST"])
-def predict():
-    predict = request.json['userInput']
-   # prediction = count_vect.fit([predic])
-    prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
-
-    return json.dumps(prediction.tolist())
-
-   # return jsonify (np.ravel(prediction))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
