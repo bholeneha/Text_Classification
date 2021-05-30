@@ -24,13 +24,12 @@ a {
     color: white;
 }
 
-th {
+label {
     color: white;
+    font-size: 40px;
 }
 
-td {
-    color: white;
-}
+
 .background-color {
     color:black
 }

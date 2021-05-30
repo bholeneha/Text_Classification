@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link 
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" 
+    />
+<link rel="stylesheet" href="../static/css/style.css"/>
+
+    <title>DataClassification</title>
+
+</head>
+
+
+<body class="bg-dark">
+    <div class=background-color>
+        <div class="wrapper">
+       
+            <div class="jumbotron">
+                <h1 data-ng-class="display-4">Data Classification</h1>
+            </div>
+            <div class="container-fluid">
+                <h3>Model 1</h3>
+                    <p>specific details regarding the model</p>
+                        <a class="nav-link" href="model_1.html">Model 1</a>
+            
+                <h3>Model 2</h3>
+                    <p>specific details regarding the model</p>
+                        <a class="nav-link" href="model_2.html">Model 2</a>
+            </div>
+        </div>
+       
+        <div class="container">
+            
+                <div class="form-group">
+                    <label for="user-input">Input text for classification</label>
+                    <textarea class="form-control" rows="5" id="user-input" name="text"></textarea>
+                </div>
+                <div class="row" id="alert-row">
+                </div> 
+                <div class="row">
+                    <button id="submit-this" class="btn btn-primary">Predict</button>  
+                    <button id="reset" class="btn btn-primary">Clear</button>
+                </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="../static/js/app.js"></script>
+
+
+
+</body>
+</html>
