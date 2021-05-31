@@ -62,10 +62,6 @@ def home():
 def prediction_page():
     return render_template('model_1.html')
 
-@app.route('/predictiontwo_page')
-def predictiontwo_page():
-    return render_template('model_2.html')
-
 # route used when home button is clicked on Naive Bayes model
 @app.route('/home_page')
 def home_page():
@@ -77,10 +73,10 @@ def predict():
     predict = request.json['userInput']
     prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
     return json.dumps(prediction.tolist())
+    
 
- # prediction for LDA model
-@app.route('/api/submittwo',methods=["POST"])
-def predicttwo():
+#@app.route('/api/submit',methods=["POST"])
+#def predict():
  #   content = request.json['userInput']
   #  filteredContent = filter_text(content, stop)
    # word_list = []
@@ -100,8 +96,7 @@ def predicttwo():
         #    return jasonify("two with an accuracy of", classification [0][0][1])
         #if report[0][0] == 3:
          #   return jasonify("three with an accuracy of", classification [0][0][1])
-    return jsonify ("this works")
+    #return jsonify ("unseen_doc")
 
 if __name__ == '__main__':
     app.run(debug=True)
-
