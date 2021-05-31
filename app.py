@@ -1,11 +1,9 @@
-#import libraries
+# load dependencies
 import os
 import numpy as np
-import pickle
 from flask import Flask, request, json, jsonify, request
 from flask.templating import render_template
 import nltk
-#nltk.download('stopwords')
 from nltk.corpus import stopwords
 import gensim.corpora as corpora
 from string import punctuation
@@ -22,21 +20,24 @@ from string import punctuation
 from nltk.stem import WordNetLemmatizer
 import nltk
 from wordcloud import WordCloud
+import gensim
+import json
+from gensim.utils import simple_preprocess
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
 
-#nltk.download('stopwords')
-#nltk.download('wordnet')
-#nltk.download('punkt')
-#nltk.download('averaged_perceptron_tagger')
+# load models
+os.chdir('/Users/16472/Bootcamp/text_classification-')
+new_lda = gensim.models.LdaModel.load('model/lda.model')
+count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
 
-os.chdir('/Users/16472/Bootcamp/local_version')
-filename = 'test1_model.pkl'
-load_model = pickle.load(open(filename, 'rb'))
-
-
+# define variables for LDA model
 wordnet_lemmatizer = WordNetLemmatizer()
-
 stop = stopwords.words('english')
 
+# required for LDA model
 for punct in punctuation:
     stop.append(punct)
 
@@ -50,28 +51,52 @@ def filter_text(text, stop_words):
 # initialize the flask app
 app = Flask(__name__)
 
-
+# define app routes
+# routes to index on start of flask
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/api/submit',methods=["POST"])
+# route used when user clicks link to classify using Naive Bayes model
+@app.route('/prediction_page')
+def prediction_page():
+    return render_template('model_1.html')
+
+# route used when home button is clicked on Naive Bayes model
+@app.route('/home_page')
+def home_page():
+    return render_template('index.html')
+
+# prediction for NB model
+@app.route('/api/submit', methods=["POST"])
 def predict():
-    content = request.json['userInput']
-    filteredContent = filter_text(content, stop)
-    word_list = []
-    temp = filteredContent.split(" ")
-    word_list.append(temp)
-    id2word = corpora.Dictionary(word_list)
-    texts = word_list
-    corpus = [id2word.doc2bow(text) for text in texts]
-    classification = load_model(corpus)
- 
+    predict = request.json['userInput']
+    prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
+    return json.dumps(prediction.tolist())
+    
 
-
-    return jsonify(classification)
-
-
+#@app.route('/api/submit',methods=["POST"])
+#def predict():
+ #   content = request.json['userInput']
+  #  filteredContent = filter_text(content, stop)
+   # word_list = []
+    #temp = filteredContent.split(" ")
+   # word_list.append(temp)
+    #id2word = corpora.Dictionary(word_list)
+    #texts = word_list
+    #corpus = [id2word.doc2bow(text) for text in texts]
+    #unseen_doc = corpus
+    #classification = list(new_lda.get_document_topics(unseen_doc))
+    #for report in classification:
+     #   if report[0][0] == 0:
+      #     return jasonify("economics with an accuracy of", classification [0][0][1])
+      #  if report[0][0] == 1:
+       #     return jasonify("one with an accuracy of", classification [0][0][1])
+       # if report[0][0] == 2:
+        #    return jasonify("two with an accuracy of", classification [0][0][1])
+        #if report[0][0] == 3:
+         #   return jasonify("three with an accuracy of", classification [0][0][1])
+    #return jsonify ("unseen_doc")
 
 if __name__ == '__main__':
     app.run(debug=True)
