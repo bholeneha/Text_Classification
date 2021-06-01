@@ -62,6 +62,11 @@ def home():
 def prediction_page():
     return render_template('model_1.html')
 
+# route used when user clicks link to classify using LDA model
+@app.route('/predictions_two')
+def predictions_two():
+    return render_template('model_2.html')
+
 # route used when home button is clicked on Naive Bayes model
 @app.route('/home_page')
 def home_page():
@@ -75,28 +80,27 @@ def predict():
     return json.dumps(prediction.tolist())
     
 
-#@app.route('/api/submit',methods=["POST"])
-#def predict():
- #   content = request.json['userInput']
-  #  filteredContent = filter_text(content, stop)
-   # word_list = []
-    #temp = filteredContent.split(" ")
-   # word_list.append(temp)
-    #id2word = corpora.Dictionary(word_list)
-    #texts = word_list
-    #corpus = [id2word.doc2bow(text) for text in texts]
-    #unseen_doc = corpus
-    #classification = list(new_lda.get_document_topics(unseen_doc))
-    #for report in classification:
-     #   if report[0][0] == 0:
-      #     return jasonify("economics with an accuracy of", classification [0][0][1])
-      #  if report[0][0] == 1:
-       #     return jasonify("one with an accuracy of", classification [0][0][1])
-       # if report[0][0] == 2:
-        #    return jasonify("two with an accuracy of", classification [0][0][1])
-        #if report[0][0] == 3:
-         #   return jasonify("three with an accuracy of", classification [0][0][1])
-    #return jsonify ("unseen_doc")
+
+
+@app.route('/api/lda',methods=["POST"])
+def predict_two():
+    content = request.json['userInput']
+    filteredContent = filter_text(content, stop)
+    word_list = []
+    temp = filteredContent.split(" ")
+    word_list.append(temp)
+    id2word = corpora.Dictionary(word_list)
+    texts = word_list
+    corpus = [id2word.doc2bow(text) for text in texts]
+    unseen_doc = corpus
+    classification = list(new_lda.get_document_topics(unseen_doc))
+    result = []
+    for x in classification[0]:
+        temp = {}
+        temp["topic"] = x[0]
+        temp["prob"] = x[1]
+        result.append(temp)
+    return json.dumps(str(result))
 
 if __name__ == '__main__':
     app.run(debug=True)
