@@ -75,3 +75,26 @@ Technology
 - consider the use of Tableau 
 Layout
 - consideration to be given on how to be included in final presentation
+# Segment 3 and Segment 4
+ In order to strengthen our LDA model results, we intend to use NNs. To further testify the text classification obtained from LDA model , we tried Multi-CNeural Networks and also 
+## Neural Networks 
+We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make 
+To further improve the accuracy, one of the option is to add "Pooling Layers", but we didnot test it. 
+
+## Multi-Class Supervised Models
+We wanted to build a classification model to accurately classify email text into a predefined category. For this purpose, we used four classifiers:
+* Multinomial Naive Bayes
+* Logistic Regression
+* Linear Support Vector Machine
+* Random Forest
+
+### Multi-Class Classifier: Features and Design
+To train supervised classifiers, we first transformed the “email text” into a vector of numbers. We explored vector representations such as TF-IDF weighted vectors.
+After having this vector representations of the text we can train supervised classifiers to test unseen “text” and predict the category on which they fall.  After all the data transformation, and having all the features and labels, we train the classifiers.
+
+### Comparison and Evaluation 
+We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to best with accuracy of 67 %, Random Forest with worst accuracy of 48 %. While, Linear SVM aNd Logistic Regression showed almost the same accuracy of  63% and 64%, respctively. It is shown in the figure below:
+### Reference
+* https://towardsdatascience.com/multi-class-text-classification-with-scikit-learn-12f1e60e0a9f
+* https://sci2lab.github.io/ml_tutorial/multiclass_classification/#Random-Forest
+
