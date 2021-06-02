@@ -94,13 +94,12 @@ def predict_two():
     corpus = [id2word.doc2bow(text) for text in texts]
     unseen_doc = corpus
     classification = list(new_lda.get_document_topics(unseen_doc))
-    result = []
+    result = ""
     for x in classification[0]:
-        temp = {}
-        temp["topic"] = x[0]
-        temp["prob"] = x[1]
-        result.append(temp)
-    return json.dumps(str(result))
+        topic = x[0]
+        prob = x[1]
+        result+=(f"{topic} {prob},")
+    return json.dumps(result)
 
 if __name__ == '__main__':
     app.run(debug=True)

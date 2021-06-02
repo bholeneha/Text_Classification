@@ -18,10 +18,40 @@ function submitUserInformation() {
     }).then(response => {
         return response.text();
     }).then(data => {
-        console.log(typeof data)
-       // var classification = data.replace(/[^A-Za-z]+/g, ' ');
+        var clean_data = data.replace("\"","")
+        var sets = clean_data.split(",")
+        var all_sets = []
+        sets.forEach(x=>{
+            var temp = {}
+            var first_set = x.split(" ")
+            switch(first_set[0]){
+                case "0":
+                    temp.class = "science"
+                    break
+                case "1":
+                    temp.class = "politics"
+                    break
+                case "2":
+                    temp.class = "crime"
+                    break
+                case "3":
+                    temp.class = "entertainment"
+                    break
+                default:
+                    temp.class = "unknown"
+            }
+            temp.prob = first_set[1]
+            all_sets.push(temp)
+        })
+        console.log(all_sets)
+        all_sets.pop()
+        
         alertDiv.classList = "row-alert alert-success";
-        alertDiv.innerHTML = `<p class="text-dark">${data}</p>`
+        all_sets.forEach(x => {
+            console.log(`${x.class}, ${x.prob}`);
+            alertDiv.innerHTML += `<p class="text-dark"><b>Class:</b> ${x.class} <br /> <b>Prob:</b>  ${x.prob}</p>`
+        })
+      
     }).catch ( err => {
         alertDiv.innerHTML = `Error: ${err}` 
     });

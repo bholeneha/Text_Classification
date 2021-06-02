@@ -1,14 +1,7 @@
 
 
-body {
-    /*height: 100%;*/
-    /*min-height: 100%;*/
-    /*max-height: 100%;*/
+body { 
     background-image: url("../images/machine_learning.jpg");
-    /*background-size: cover;*/
-    /*min-height: 10vh;*/
-    /*width: 100%;*/
-    /*overflow: hidden;*/
     background-repeat: repeat-x;
 }
 
@@ -52,13 +45,17 @@ label {
     background-color:  white;
 }
 
+.row-alert {
+    background-color: white;
+}
+
 .row {
     padding-left: 25px
 }
 
 .model {
-    padding-left: 800px;
+    text-align: center;
 }
 .modeltwo {
-    padding-left: 830px;
+    text-align: center;
 }
