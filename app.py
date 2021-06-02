@@ -79,9 +79,7 @@ def predict():
     prediction = CLF_model.predict(count_vect.transform([f"{predict}"]))
     return json.dumps(prediction.tolist())
     
-
-
-
+# route used when user clicks link to classify using LDA model
 @app.route('/api/lda',methods=["POST"])
 def predict_two():
     content = request.json['userInput']
