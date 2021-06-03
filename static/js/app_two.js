@@ -26,16 +26,16 @@ function submitUserInformation() {
             var first_set = x.split(" ")
             switch(first_set[0]){
                 case "0":
-                    temp.class = "science"
+                    temp.class = "Crime"
                     break
                 case "1":
-                    temp.class = "politics"
+                    temp.class = "Entertainment"
                     break
                 case "2":
-                    temp.class = "crime"
+                    temp.class = "Politics"
                     break
                 case "3":
-                    temp.class = "entertainment"
+                    temp.class = "Science"
                     break
                 default:
                     temp.class = "unknown"
