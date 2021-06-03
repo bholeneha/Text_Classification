@@ -1,19 +1,12 @@
 
 
-body {
-    /*height: 100%;*/
-    /*min-height: 100%;*/
-    /*max-height: 100%;*/
+body { 
     background-image: url("../images/machine_learning.jpg");
-    /*background-size: cover;*/
-    /*min-height: 10vh;*/
-    /*width: 100%;*/
-    /*overflow: hidden;*/
     background-repeat: repeat-x;
 }
 
 .jumbotron {
-    background-color: black;
+    background-color: #04417e;
     background-size: 100% 100%;
     text-align: center;
 }
@@ -24,8 +17,7 @@ body {
 }
 
 h3 {
-    color: white;
-    
+    color: white; 
 }
 
 h4 {
@@ -33,7 +25,7 @@ h4 {
 }
 
 p {
-    color: white;
+    color: white; 
     font-size: 20px;
     padding-left: 20px;
 }
@@ -52,10 +44,20 @@ label {
     background-color:  white;
 }
 
+.row-alert {
+    background-color: white;
+}
+
 .row {
     padding-left: 25px
 }
 
 .model {
-    padding-left: 800px;
+    text-align: center;
+}
+.modeltwo {
+    text-align: center;
+}
+.nav-link {
+    text-align: center;
 }

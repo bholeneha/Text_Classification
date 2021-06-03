@@ -1,4 +1,3 @@
-
 var reset = document.getElementById("reset");
 
 var alertDiv = document.getElementById("alert-row");
@@ -6,7 +5,7 @@ var textArea = document.getElementById("user-input");
 
 
 function submitUserInformation() {
-    var userText = textArea.value.replace(/[^A-Za-z]+/g, ' ');
+    var userText = textArea.value.replace(/[^A-Za-z]+/g, ' ');
     console.log(userText);
     fetch('/api/submit', {
         method: 'POST',
@@ -20,7 +19,7 @@ function submitUserInformation() {
         return response.text();
     }).then(data => {
         console.log(typeof data)
-        var classification = data.replace(/[^A-Za-z]+/g, ' ');
+        var classification = data.replace(/[^A-Za-z]+/g, ' ');
         alertDiv.classList = "row-alert alert-success";
         alertDiv.innerHTML = `<p class="text-dark">${classification}</p>`
     }).catch ( err => {
@@ -36,4 +35,3 @@ function clearText() {
 var submitBtn = document.getElementById("submit-this");
 submitBtn.addEventListener("click", submitUserInformation)
 reset.addEventListener("click", clearText)
-
