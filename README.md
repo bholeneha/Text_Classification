@@ -76,10 +76,19 @@ Technology
 Layout
 - consideration to be given on how to be included in final presentation
 # Segment 3 and Segment 4
- In order to strengthen our LDA model results, we intend to use NNs. To further testify the text classification obtained from LDA model , we tried Multi-CNeural Networks and also 
-## Neural Networks 
-We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make 
+ In order to strengthen our LDA model results, we intend to use NNs. To further testify the text classification obtained from LDA model , we tried Multi-Class Neural Networks and also four Multi-Class Supervised Models.
+## Multi-Class Neural Networks 
+We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Our model will have one input layer, one embedding layer, one LSTM layer with 128 neurons and one output layer with 4 neurons since we have 4 labels in the output. 
+
+### Multi-Class NN: Features and Design
+We need to convert text inputs into embedded vectors. We will be using GloVe word embeddings to convert text inputs to their numeric counterparts.
+
+### Evaluation
+Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make 
 To further improve the accuracy, one of the option is to add "Pooling Layers", but we didnot test it. 
+
+### Reference 
+* https://stackabuse.com/python-for-nlp-multi-label-text-classification-with-keras
 
 ## Multi-Class Supervised Models
 We wanted to build a classification model to accurately classify email text into a predefined category. For this purpose, we used four classifiers:
