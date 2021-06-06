@@ -58,6 +58,10 @@ label {
 .modeltwo {
     text-align: center;
 }
-.nav-link {
+/* .nav-link {
     text-align: center;
+} */
+h1 {
+    text-align: center;
+    color: white;
 }
