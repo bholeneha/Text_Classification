@@ -8,12 +8,12 @@
 - [Dataset](##Dataset)
 - [Database](##Database)
 - [Technologies](##TechnologiesUsed)
-- [Method](##Method)
-    - [Data Restructuring](###DataRestructuring)
+- [Dashboard & Storyboard](##Dashboard&Storyboard)
+- [Machine Learning](##MachineLearning)
     - [Data Preprocessing](###DataPreprocessing)
-    - [Machine Learning](###MachineLearning)
+    - [LDA Model](###LDAModel)
 - [Analysis](##Analysis)
-- [Dashboard](##Dashboard)
+
 
 
 ## PROJECT OVERVIEW 
@@ -78,6 +78,7 @@ Libraries:
 - NLP - NLTK, Gensim
 - Machine Learning - 
 - Visualization - WordCloud, pyLDAvis
+
 ### Dashboard
 
 ### Technology Used
