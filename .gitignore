@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+#Files to ignore
+model_1.html
+model_2.html
+
+
 # Distribution / packaging
 .Python
 build/
