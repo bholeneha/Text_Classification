@@ -8,12 +8,12 @@
 - [Dataset](##Dataset)
 - [Database](##Database)
 - [Technologies](##TechnologiesUsed)
-- [Method](##Method)
-    - [Data Restructuring](###DataRestructuring)
+- [Dashboard & Storyboard](##Dashboard&Storyboard)
+- [Machine Learning](##MachineLearning)
     - [Data Preprocessing](###DataPreprocessing)
-    - [Machine Learning](###MachineLearning)
+    - [LDA Model](###LDAModel)
 - [Analysis](##Analysis)
-- [Dashboard](##Dashboard)
+
 
 
 ## PROJECT OVERVIEW 
@@ -70,7 +70,6 @@ Softwares:
 - Python
 - Google Colab Notebooks
 - Jupyter Notebooks
-- 
 
 
 Libraries: 
@@ -78,6 +77,7 @@ Libraries:
 - NLP - NLTK, Gensim
 - Machine Learning - 
 - Visualization - WordCloud, pyLDAvis
+
 ### Dashboard
 
 ### Technology Used
@@ -145,14 +145,39 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 
 ![Overlapping Clusters](Images/eight.png)
 
+# Segment 3 and Segment 4
+ In order to strengthen our LDA model results, we intend to use NNs. To further testify the text classification obtained from LDA model , we tried Multi-Class Neural Networks and also four Multi-Class Supervised Models.
 
-## ANALYSIS 
+## Multi-Class Neural Networks 
+We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Our model have one input layer, one embedding layer, one LSTM layer with 128 neurons and one output layer with 4 neurons since we have 4 labels in the output. (Neha! please add images below for NNs  "model summary")
 
+### Multi-Class NN: Features and Design
+We need to convert text inputs into embedded vectors. We used GloVe word embeddings to convert text inputs to their numeric counterparts. Afterwards, we trained the model. After training, we tested the model with test data.
 
-### SUMMARY 
-(What more can you do with this model) 
-  
+### Evaluation
+Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make . Finally, we improved the accuracy of NN model to 58.7 % as ashown in the figure below: (Neha!, add the NN new figure of improved accuracy "accurate")
+To further improve the accuracy, one of the option is to add "Pooling Layers", but we didnot test it. 
 
+### Reference 
+* https://stackabuse.com/python-for-nlp-multi-label-text-classification-with-keras
 
+## Multi-Class Supervised Models
+We wanted to build a classification model to accurately classify email text into a predefined category. For this purpose, we used four classifiers:
+* Multinomial Naive Bayes
+* Logistic Regression
+* Linear Support Vector Machine
+* Random Forest
 
+### Multi-Class Classifier: Features and Design
+To train supervised classifiers, we first transformed the “email text” into a vector of numbers. We explored vector representations such as TF-IDF weighted vectors.
+After having this vector representations of the text we can train supervised classifiers to test unseen “text” and predict the category on which they fall.  After all the data transformation, and having all the features and labels, we train the classifiers.
 
+### Comparison and Evaluation 
+We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to best with accuracy of 67 %, Random Forest with worst accuracy of 48 %. While, Linear SVM and Logistic Regression showed almost the same accuracy of  63% and 64%, respctively. It is shown in the figure below: (Neha !, please add the figures here for comparison "classifiers", "model summary")
+
+### Reference
+* https://towardsdatascience.com/multi-class-text-classification-with-scikit-learn-12f1e60e0a9f
+* https://sci2lab.github.io/ml_tutorial/multiclass_classification/#Random-Forest
+
+## Conclusion
+We used three different models for text classification; LDA , NN and set of multiclass supervised models. LDA model give us the probablity of relevance of a given text, to a specfic category. While multiclass supervised algorithms (Multinomial Naive Bayes,  Logistic Regression,  Linear Support Vector Machine and Random Forest) give us the exact category to which the text belongs.  We didnot test NN for the test data, as we already had two working models.
