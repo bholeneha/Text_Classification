@@ -31,30 +31,19 @@ Whether machine learning provides a sufficient accuracy level for predicting top
 #### Purpose 
 Perform text classification on email data and categorize data into four categories; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
 
-
 ## TEAM
  
 - Fatima Hussain- Model development and technology selection
-- Neha Bhole - Data Cleaning
+- Neha Bhole - Data Cleaning, 
 - Beverly Edwards-Smith - Dashboard 
 - Veronika Rimsha - Database
-- Sibtain Janmohammed - GitHub
-
-### Communication protocol:
-- Communication over slack group channel
-- Zoom Meetings 4 times per week 
-  
+- Sibtain Janmohammed - Github
 
 ## DATASET
  
-The following dataset was used in this project. It is a mock journalist emails dataset available on Kaggle. It contains four folders corresponding to four topics - Crime, Politics, Science and Entertainment. Each folder contains 1000+ text files with individual emails.  
-
-[//]: # ([NIPS Papers Dataset]https://github.com/kapadias/mediumpo )
+The following dataset was used in this project. It is a mock journalist emails dataset available on Kaggle. It contains four folders corresponding to four topics - Crime, Politics, Science and Entertainment. Each folder contains 1000+ text files with individual emails. 
 
 * [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
-
-[//]: # (We intend to use one or both of these datasets. )
-
 
 ## DATABASE 
  
