@@ -14,7 +14,7 @@
     - [LDA Model](###LDAModel)
     - [Multi-Class Neural Networks](###Multi-ClassNeuralNetworks)
     - [Multi-Class Supervised Models](###Multi-ClassSupervisedModels)
-- [Analysis](##Analysis)
+- [Conclusion](##Conclusion)
 
 
 ## PROJECT OVERVIEW 
@@ -49,11 +49,11 @@ Perform text classification on email data and categorize data into four categori
  
 The following dataset was used in this project. It is a mock journalist emails dataset available on Kaggle. It contains four folders corresponding to four topics - Crime, Politics, Science and Entertainment. Each folder contains 1000+ text files with individual emails.  
 
-[comment]: # ([NIPS Papers Dataset]https://github.com/kapadias/mediumpo )
+[//]: # ([NIPS Papers Dataset]https://github.com/kapadias/mediumpo )
 
 * [Emails Dataset](https://www.kaggle.com/dipankarsrirag/topic-modelling-on-emails)
 
-[comment]: # (We intend to use one or both of these datasets. )
+[//]: # (We intend to use one or both of these datasets. )
 
 
 ## DATABASE 
@@ -75,7 +75,7 @@ Softwares:
 Libraries: 
 - Miscellaneous - Pandas, Spark, Joblib. 
 - NLP - NLTK, Gensim, Regex
-- Machine Learning -  sklearn (LogisticRegression, RandomForestClassifier, LinearSVC, MultinomialNB), 
+- Machine Learning -  sklearn (LogisticRegression, RandomForestClassifier, LinearSVC, MultinomialNB)
 - Visualization - WordCloud, pyLDAvis, seaborn
 
 ### Dashboard
@@ -143,9 +143,9 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 ### Multi-Class Neural Networks 
 We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Our model have one input layer, one embedding layer, one LSTM layer with 128 neurons and one output layer with 4 neurons since we have 4 labels in the output. 
 
-![Model Summary](Images/NB/model_summary.png)
+![Model Summary](Images/NN/model_summary.png)
 
-[comment]: # (Neha! please add images below for NNs  "model summary")
+[//]: # (Neha! please add images below for NNs  "model summary")
 
 #### Multi-Class NN: Features and Design
 We need to convert text inputs into embedded vectors. We used GloVe word embeddings to convert text inputs to their numeric counterparts. Afterwards, we trained the model. After training, we tested the model with test data.
@@ -155,7 +155,7 @@ Initially, model accuracy was not good and was only 25%. We changed the Sigmoid 
 
 ![NN Accuracy](Images/NN/accurate.png)
 
-[comment]: # (Neha!, add the NN new figure of improved accuracy "accurate")
+[//]: # (Neha!, add the NN new figure of improved accuracy "accurate")
 
 To further improve the accuracy, one of the option is to add "Pooling Layers", but we did not test it. 
 
@@ -180,7 +180,7 @@ We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to b
 
 ![Model Summary](Images/NB/model_accuracy.png)
 
-[comment]: #(Neha!, please add the figures here for comparison "classifiers", "model summary")
+[//]: # (Neha!, please add the figures here for comparison "classifiers", "model summary")
 
 #### Reference
 * https://towardsdatascience.com/multi-class-text-classification-with-scikit-learn-12f1e60e0a9f
