@@ -25,10 +25,10 @@ Text classification has wide variety of applications in various domains. It can 
 ### Overview 
 <little bit about topic modelling>
 
-### Questions We Hope To Answer
+#### Questions We Hope To Answer
 Whether machine learning provides a sufficient accuracy level for predicting topic classification on unseen text. 
 
-### Purpose 
+#### Purpose 
 Perform text classification on email data and categorize data into four categories; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
 
 
@@ -62,7 +62,7 @@ The dataset used in this project is unstructured, therefore Amazon S3 was used a
 
 ### Data Restructuring
 
-The 9000+ text files in the dataset were difficult to import from Amazon S3 and iterate over in the Google Colab notebook. Hence, the data was restructed into a dataframe using pandas library. A csv file was saved and uploaded to Amazon S3 for further analysis. 
+The 9000+ text files in the dataset were difficult to import from Amazon S3 and iterate over in the Google Colab notebook. Hence, the data was restructed into a dataframe using pandas library. A csv file was saved and uploaded to Amazon S3 for further analysis. The code for data restructuring can be found here: [Data Restructuring](Data Restructuring/Data_Restructuring_Code.ipynb) 
 
 ## TECHNOLOGIES USED
  
@@ -72,12 +72,11 @@ Softwares:
 - Google Colab Notebooks
 - Jupyter Notebooks
 
-
 Libraries: 
-- Miscellaneous - Pandas, Spark, 
-- NLP - NLTK, Gensim
-- Machine Learning - 
-- Visualization - WordCloud, pyLDAvis
+- Miscellaneous - Pandas, Spark, Joblib. 
+- NLP - NLTK, Gensim, Regex
+- Machine Learning -  sklearn (LogisticRegression, RandomForestClassifier, LinearSVC, MultinomialNB), 
+- Visualization - WordCloud, pyLDAvis, seaborn
 
 ### Dashboard
 
@@ -142,14 +141,23 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 ![Overlapping Clusters](Images/LDA/eight.png)
 
 ### Multi-Class Neural Networks 
-We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Our model have one input layer, one embedding layer, one LSTM layer with 128 neurons and one output layer with 4 neurons since we have 4 labels in the output. (Neha! please add images below for NNs  "model summary")
+We used multi-class neural networks, utilizing Keras for this purpose. NN specfications for three layers are shown below . Our model have one input layer, one embedding layer, one LSTM layer with 128 neurons and one output layer with 4 neurons since we have 4 labels in the output. 
+
+![Model Summary](Images/NB/model_summary.png)
+
+[comment]: # (Neha! please add images below for NNs  "model summary")
 
 #### Multi-Class NN: Features and Design
 We need to convert text inputs into embedded vectors. We used GloVe word embeddings to convert text inputs to their numeric counterparts. Afterwards, we trained the model. After training, we tested the model with test data.
 
 #### Evaluation
-Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make . Finally, we improved the accuracy of NN model to 58.7 % as ashown in the figure below: (Neha!, add the NN new figure of improved accuracy "accurate")
-To further improve the accuracy, one of the option is to add "Pooling Layers", but we didnot test it. 
+Initially, model accuracy was not good and was only 25%. We changed the Sigmoid to Softmax in the final layer. It improved the accuracy to 58%.  We also used embedding layer to make . Finally, we improved the accuracy of NN model to 58.7 % as ashown in the figure below: 
+
+![NN Accuracy](Images/NN/accurate.png)
+
+[comment]: # (Neha!, add the NN new figure of improved accuracy "accurate")
+
+To further improve the accuracy, one of the option is to add "Pooling Layers", but we did not test it. 
 
 #### Reference 
 * https://stackabuse.com/python-for-nlp-multi-label-text-classification-with-keras
@@ -166,7 +174,13 @@ To train supervised classifiers, we first transformed the “email text” into 
 After having this vector representations of the text we can train supervised classifiers to test unseen “text” and predict the category on which they fall.  After all the data transformation, and having all the features and labels, we train the classifiers.
 
 #### Comparison and Evaluation 
-We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to best with accuracy of 67 %, Random Forest with worst accuracy of 48 %. While, Linear SVM and Logistic Regression showed almost the same accuracy of  63% and 64%, respctively. It is shown in the figure below: (Neha !, please add the figures here for comparison "classifiers", "model summary")
+We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to best with accuracy of 67 %, Random Forest with worst accuracy of 48 %. While, Linear SVM and Logistic Regression showed almost the same accuracy of  63% and 64%, respctively. It is shown in the figure below:
+
+![Comparison Classifier](Images/NB/classifiers.png)
+
+![Model Summary](Images/NB/model_accuracy.png)
+
+[comment]: #(Neha!, please add the figures here for comparison "classifiers", "model summary")
 
 #### Reference
 * https://towardsdatascience.com/multi-class-text-classification-with-scikit-learn-12f1e60e0a9f
