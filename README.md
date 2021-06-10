@@ -1,5 +1,8 @@
 # TEXT CLASSIFICATION USING LDA 
  
+![Text Classification](https://github.com/bholeneha/Text_Classification/Presentation.gif)
+
+Link to presentation can be found [Here](https://docs.google.com/presentation/d/1zoXkzSoB_72SuoHGv7QcCK-8uLo-C-7FfopmASO-scE/edit#slide=id.gdb97ff702f_0_14)
 
 ## Table of Contents
  
