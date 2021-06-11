@@ -10,7 +10,6 @@ import json
 import joblib
 
 import nltk
-nltk.download()
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 nltk.download('wordnet')
