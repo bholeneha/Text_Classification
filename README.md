@@ -77,7 +77,7 @@ Libraries:
 
 ## DASHBOARD & STORYBOARD
  
-The dashboard for this project can be accessed here: [Text Classification Dashboard](<link goes here>)
+The dashboard for this project can be accessed here: [Text Classification Dashboard](https://project-textclassification.herokuapp.com/)
 
 ### Interactive Elements
 
