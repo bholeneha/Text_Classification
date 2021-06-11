@@ -1,37 +1,37 @@
 # load dependencies
 import os
 import numpy as np
-from flask import Flask, request, json, jsonify, request
+from flask import Flask, request, json, jsonify, request, url_for
 from flask.templating import render_template
-import nltk
-from nltk.corpus import stopwords
-import gensim.corpora as corpora
 from string import punctuation
 import regex
-import numpy as np 
-import os
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
-import regex
-from nltk.corpus import stopwords 
-from nltk.tokenize import WordPunctTokenizer
-from string import punctuation
-from nltk.stem import WordNetLemmatizer
-import nltk
-from wordcloud import WordCloud
-import gensim
 import json
-from gensim.utils import simple_preprocess
-from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
+
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+nltk.download('wordnet')
+from nltk.tokenize import WordPunctTokenizer
+from nltk.stem import WordNetLemmatizer
+
+
+
+import gensim
+import gensim.corpora as corpora
+from gensim.utils import simple_preprocess
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 
+
 # load models
-os.chdir('../Dashboard')
-new_lda = gensim.models.LdaModel.load('model/lda.model')
-count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
+new_lda = gensim.models.LdaModel.load('/app/Dashboard/model/lda.model')
+
+count_vect, tfidf_transformer, CLF_model = joblib.load('/app/Dashboard/model/clf_model.model')
 
 # define variables for LDA model
 wordnet_lemmatizer = WordNetLemmatizer()
