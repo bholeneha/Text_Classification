@@ -1,7 +1,7 @@
 # load dependencies
 import os
 import numpy as np
-from flask import Flask, request, json, jsonify, request
+from flask import Flask, request, json, jsonify, request, url_for
 from flask.templating import render_template
 from string import punctuation
 import regex
@@ -37,7 +37,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 
 # load models
-os.chdir('../Dashboard')
+# os.chdir('../Dashboard/model')
 new_lda = gensim.models.LdaModel.load('model/lda.model')
 count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
 
