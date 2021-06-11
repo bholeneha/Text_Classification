@@ -36,9 +36,14 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 
 # load models
-os.chdir('./Dashboard')
-new_lda = gensim.models.LdaModel.load('model/lda.model')
-count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
+try:
+    new_lda = gensim.models.LdaModel.load('model/lda.model')
+except: 
+    print("Could not load lda")
+try:
+    count_vect, tfidf_transformer, CLF_model = joblib.load('model/clf_model.model')
+except:
+    print("Could not load other dude")
 
 # define variables for LDA model
 wordnet_lemmatizer = WordNetLemmatizer()
