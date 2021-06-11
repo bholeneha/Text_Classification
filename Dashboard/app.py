@@ -10,19 +10,13 @@ import json
 import joblib
 
 import nltk
-try:
-    from nltk.corpus import stopwords
-except:
-    nltk.download('stopwords')
-    from nltk.corpus import stopwords
-try:
-    from nltk.tokenize import WordPunctTokenizer
-    from nltk.stem import WordNetLemmatizer
-except:
-    nltk.download('wordnet')
-    from nltk.tokenize import WordPunctTokenizer
-    from nltk.stem import WordNetLemmatizer
-nltk.download('txt')
+nltk.download()
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+nltk.download('wordnet')
+from nltk.tokenize import WordPunctTokenizer
+from nltk.stem import WordNetLemmatizer
+
 
 
 import gensim
