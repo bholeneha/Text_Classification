@@ -13,6 +13,7 @@ import nltk
 try:
     from nltk.corpus import stopwords
 except:
+    nltk.download('txt')
     nltk.download('stopwords')
     from nltk.corpus import stopwords
 try:
