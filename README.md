@@ -122,6 +122,7 @@ Before applying the LDA model, we developed the "Bag of Words" from the "Filtere
 * We see distinct clusters when we choose "No. Topics=4".  If "No. Topics" are increases, intersecting clusters are formed, clearly showing that data set has distinct four categories of text.
 * We used pyLDAvis.gensim to see the visuals.
 
+Click here to take a look at LDA Colab notebook: [LDA Text Classification Code](Notebooks/S3_LDA_Text_Classification.ipynb)
 
 **LDA with four distinct topics versus LDA with two overlapping clusters**
 ![Four distinct topic](Images/LDA/four.png)
@@ -163,6 +164,8 @@ After having this vector representations of the text we can train supervised cla
 
 #### Comparison and Evaluation 
 We compared the accuracy of 4 classifiers and found Multinomial Naive Bayes to best with accuracy of 67 %, Random Forest with worst accuracy of 48 %. While, Linear SVM and Logistic Regression showed almost the same accuracy of  63% and 64%, respctively. It is shown in the figure below:
+
+Click here to take a look at Naive Bayes Colab notebook: [Naive Bayes Text Classification Code](Notebooks/S3_NaiveBayes_Text_Classification.ipynb)
 
 ![Comparison Classifier](Images/NB/classifiers.png)
 
