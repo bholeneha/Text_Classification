@@ -22,19 +22,16 @@
 ### Why we chose this topic? 
 Text classification has wide variety of applications in various domains. It can be used in cyber security for classification of documents on the basis of privacy and confidentiality. It can be used for sentiment analysis for customer reviews in on line shopping etc. 
 
-### Overview 
-<little bit about topic modelling>
-
-#### Questions We Hope To Answer
+### Questions We Hope To Answer
 Whether machine learning provides a sufficient accuracy level for predicting topic classification on unseen text. 
 
-#### Purpose 
+### Purpose 
 Perform text classification on email data and categorize data into four categories; crime, politics, entertainment and science. This problem falls under "Topic Modelling".
 
 ## TEAM
  
-- Fatima Hussain- Model development and technology selection
-- Neha Bhole - Data Cleaning, 
+- Fatima Hussain- Model choice and Development
+- Neha Bhole - Data Cleaning
 - Beverly Edwards-Smith - Dashboard 
 - Veronika Rimsha - Database
 - Sibtain Janmohammed - Github
@@ -76,7 +73,11 @@ Libraries:
 
 
 ## DASHBOARD & STORYBOARD
- 
+
+![StoryBoard GIF](Images/Presentation.gif)
+
+The storyboard can be found here: [Text Classification Slides](https://docs.google.com/presentation/d/1zoXkzSoB_72SuoHGv7QcCK-8uLo-C-7FfopmASO-scE/edit#slide=id.gdc4b041922_0_2706)
+
 The dashboard for this project can be accessed here: [Text Classification Dashboard](https://project-textclassification.herokuapp.com/)
 
 ### Interactive Elements
@@ -84,8 +85,6 @@ The dashboard for this project can be accessed here: [Text Classification Dashbo
 - Input box - to take input from user 
 - Buttons - to predict and clear the input box
 - Hyperlinks - for details and visuals for each of the models
-
-The storyboard can be found here: [Text Classification Slides](https://docs.google.com/presentation/d/1zoXkzSoB_72SuoHGv7QcCK-8uLo-C-7FfopmASO-scE/edit#slide=id.gdc4b041922_0_2706)
 
 ## MACHINE LEARNING MODELS
 
